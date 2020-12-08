@@ -56,5 +56,34 @@ public class Tester {
         as.reset();
         System.out.println(as.next());
         System.out.println();
+
+        // Should be the exact same as r
+        IntegerSequence as2 = new ArraySequence(r);
+        System.out.println("Expected sequence:\n10, 11, 12, 13, 14, 15");
+        while (as2.hasNext()) {
+            System.out.print(as2.next());
+            if (as2.hasNext()) {       
+                System.out.print( ", " );
+            }
+        }
+        System.out.println();
+
+        System.out.println("Expected length:\n6");
+        System.out.println(as2.length());
+        System.out.println();
+
+        System.out.println("Must throw an exception!");
+        try {
+            as2.next();
+        } catch (NoSuchElementException e) {
+            System.out.println("Exception caught!");
+        }
+        System.out.println();
+
+        System.out.println("Testing Reset:");
+        System.out.println("Expected value:\n10");
+        as2.reset();
+        System.out.println(as2.next());
+        System.out.println();
     }
 }
