@@ -85,5 +85,25 @@ public class Tester {
         as2.reset();
         System.out.println(as2.next());
         System.out.println();
+
+        // Testing empty ArraySequences
+        int[] emptyArr = {};
+        as = new ArraySequence(emptyArr);
+        System.out.println("Should not print anything:");
+        while(as.hasNext()){
+            System.out.print(as.next()+", ");
+        }
+        System.out.println();
+
+        // Testing Range when start == end
+        r = new Range(4, 4);
+        System.out.println("Expected:\n4");
+        while(r.hasNext()){
+            System.out.print(r.next());
+            if (r.hasNext()) {       
+                System.out.print( ", " );
+            }
+        }
+        System.out.println();
     }
 }
