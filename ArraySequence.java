@@ -18,6 +18,10 @@ public class ArraySequence implements IntegerSequence{
     }
 
     public int next() {
+        if (!hasNext()) {
+            throw new NoSuchElementException("There is no next element between, use hasNext() to check when a sequence has ended.");
+        }
+
         int out = data[currentIndex];
         currentIndex += 1;
         return out;
