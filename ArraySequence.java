@@ -9,22 +9,25 @@ public class ArraySequence implements IntegerSequence{
         for (int i = 0; i < other.length; i++) {
             data[i] = other[i];
         }
+        currentIndex = 0;
     }
 
     // Methods that must be implemented!
     public boolean hasNext() {
-        return false;
+        return currentIndex < data.length;
     }
 
     public int next() {
-        return 0;
+        int out = data[currentIndex];
+        currentIndex += 1;
+        return out;
     }
 
     public int length() {
-        return 0;
+        return data.length;
     }
 
     public void reset() {
-
+        currentIndex = 0;
     }
 }
