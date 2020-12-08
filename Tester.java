@@ -37,5 +37,24 @@ public class Tester {
         while(as.hasNext()){
             System.out.print(as.next()+", ");
         }
+        System.out.println();
+
+        System.out.println("Expected length:\n7");
+        System.out.println(as.length());
+        System.out.println();
+
+        System.out.println("Must throw an exception!");
+        try {
+            as.next();
+        } catch (NoSuchElementException e) {
+            System.out.println("Exception caught!");
+        }
+        System.out.println();
+
+        System.out.println("Testing Reset:");
+        System.out.println("Expected value:\n1");
+        as.reset();
+        System.out.println(as.next());
+        System.out.println();
     }
 }
